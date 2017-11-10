@@ -6,6 +6,7 @@ int main() {
   string length;
   string array;
   string integer_str;
+  string result;
   int length_int;
   int counter = 0;
   int k = 0;
@@ -24,6 +25,23 @@ int main() {
     for (int i = 0; i < (array.length() / 2); i++) {
       swap(array[i], array[(array.length()) - i - 1]);
     }
-    cout << array << endl;
+    while (true) {
+      for (int i = z; i < array.length(); i++) {
+        if (array[i] == ' ') {
+          z++;
+          break;
+        }
+        integer_str = integer_str + array[i];
+        z++;
+      }
+      if (integer_str == "") break;
+      cout << integer_str << endl;
+      for (int j = 0; j < ((integer_str.length()) / 2); j++) {
+        swap(integer_str[j], integer_str[integer_str.length() - j - 1]);
+      }
+      result = result + integer_str + " ";
+      integer_str = "";
+    }
+    cout << result << endl;
   }
 }
