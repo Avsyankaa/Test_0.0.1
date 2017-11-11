@@ -35,7 +35,6 @@ int main() {
         z++;
       }
       if (integer_str == "") break;
-      cout << integer_str << endl;
       for (int j = 0; j < ((integer_str.length()) / 2); j++) {
         swap(integer_str[j], integer_str[integer_str.length() - j - 1]);
       }
