@@ -10,7 +10,8 @@ int main() {
   string part1, part2;
   int length_int;
   int counter = 0;
-  int length1 = 0;
+  int k = 0;
+  int z = 0;
   cin >> length;
   cin.ignore(numeric_limits<streamsize>::max(), '\n');
   getline(cin, array);
@@ -21,17 +22,19 @@ int main() {
   if (length_int != (counter + 1))
     cout << " An error has occurred while reading" << endl;
   else {
-    cin >> count;
-    if (atoi(count.c_str()) == 0) {
+    getline(cin, count);
+    if (count == "") {
       cout << " An error has occurred while reading" << endl;
     } else {
-      length1 = (length_int - atoi(count.c_str())) * 2;
-      for (int i = 0; i < length1; i++) {
-        part2 = part2 + array[i];
+      while (k != (length_int - atoi(count.c_str()))) {
+        part2 = part2 + array[z];
+        if (array[z] == ' ') k++;
+        z++;
       }
-      for (int i = length1; i < array.length(); i++) {
+      for (int i = part2.length(); i < array.length(); i++) {
         part1 = part1 + array[i];
       }
+
       result = part1 + ' ' + part2;
       cout << result << endl;
     }
