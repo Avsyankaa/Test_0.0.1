@@ -2,7 +2,6 @@
 #include <string>
 using namespace std;
 int main() {
-    string array [100] [100];
     string str;
     string stolb;
     string cinn;
@@ -27,6 +26,13 @@ int main() {
         int stolb_int, str_int;
         stolb_int = atoi(stolb.c_str());
         str_int = atoi(str.c_str());
+        string **array;
+        array= new string *[str_int];
+        for (int i=0; i<str_int; i++) array[i]= new string [stolb_int];
+        for (int i=0; i<str_int; i++) {
+            for (int j=0; j<stolb_int; j++)
+                array[i][j]= "";
+        }
         for (int i=0; i<str_int; i++) {
             getline (cin, cinn);
             cin.clear();
